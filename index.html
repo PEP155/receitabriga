@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Aula 08 D</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link para o CSS externo -->
+</head>
+<body>
+
+    <div class="header">
+        <h1 id="titulo">Receita de Brigadeiro</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            <h2>Modo de Preparo:</h2>
+            <ol>
+                <li>Em uma panela, coloque o leite condensado, o chocolate em pó e a manteiga.</li>
+                <li>Leve ao fogo médio, mexendo sempre até a mistura desgrudar do fundo da panela (cerca de 10 minutos).</li>
+                <li>Despeje a mistura em um prato untado e deixe esfriar.</li>
+                <li>Depois de frio, unte as mãos com manteiga e faça bolinhas com a massa.</li>
+                <li>Passe as bolinhas no chocolate granulado e coloque em forminhas de papel.</li>
+            </ol>
+
+            
+
+            <p>Fonte: <a href="https://receitas.globo.com/tipos-de-prato/doces-e-sobremesas/brigadeiro-561b3b6d4d38852e36000041.ghtml" target="_blank">Receitas Globo</a></p>
+
+            <button onclick="alterarTitulo()">Alterar Título</button>
+            <button onclick="alterarImagem()">Alterar Imagem</button>
+            <button onclick="alterarEstilo()">Alterar Estilo</button>
+            <button onclick="mostrarOcultar()">Mostrar/Ocultar Dica Secreta</button>
+
+            <div id="dicaSecreta" class="hidden">
+                <p>Experimente adicionar um pouco de leite em pó para uma textura ainda mais cremosa!</p>
+            </div>
+        </div>
+
+        <div class="col-9">
+            <h2>Modo de Preparo:</h2>
+            <ol>
+                <li>Em uma panela, coloque o leite condensado, o chocolate em pó e a manteiga.</li>
+                <li>Leve ao fogo médio, mexendo sempre até a mistura desgrudar do fundo da panela (cerca de 10 minutos).</li>
+                <li>Despeje a mistura em um prato untado e deixe esfriar.</li>
+                <li>Depois de frio, unte as mãos com manteiga e faça bolinhas com a massa.</li>
+                <li>Passe as bolinhas no chocolate granulado e coloque em forminhas de papel.</li>
+            </ol>
+
+            <h2>Dicas:</h2>
+            <p>Você pode variar a cobertura, usando coco ralado ou confeitos coloridos!</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Receita de Brigadeiro</p>
+    </div>
+
+    <script>
+        // Funções de interação com o JavaScript
+        function alterarTitulo() {
+            document.getElementById("titulo").textContent = "Receita Incrível de Brigadeiro";
+        }
+
+
+
+
+        function alterarEstilo() {
+            var header = document.querySelector('.header');
+            header.style.backgroundColor = "#f0c6a0"; // Altera a cor de fundo
+
+            var paragrafos = document.querySelectorAll("p");
+            paragrafos.forEach(function(p) {
+                p.style.color = "purple"; // Muda a cor do texto
+                p.style.fontSize = "18px"; // Muda o tamanho da fonte
+            });
+
+            // Alterando o estilo do título
+            document.getElementById("titulo").classList.add("highlight");
+        }
+
+        // Mostrar ou ocultar a dica secreta (sem usar if...else)
+        function mostrarOcultar() {
+            document.getElementById("dicaSecreta").classList.toggle("hidden");
+        }
+    </script>
+
+</body>
+</html>
